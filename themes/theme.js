@@ -81,4 +81,12 @@ export const theme = {
     darkType1: '#040706',
     darkType2: '#282735',
   },
+  fonts: {
+    regular: 'regular',
+    medium: 'medium',
+    semiBold: 'semiBold',
+    bold: 'bold',
+    extraBold: 'extraBold',
+    black: 'black',
+  },
 };
