@@ -4,7 +4,7 @@ import { AuthForm } from '../AuthForm';
 
 import { styles } from './styles';
 
-export function AuthContent() {
+export function AuthContent({ isSignIn }) {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -16,7 +16,7 @@ export function AuthContent() {
         </View>
       </View>
 
-      <AuthForm />
+      <AuthForm isSignIn={isSignIn} />
     </View>
   );
 }

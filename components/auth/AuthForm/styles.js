@@ -41,9 +41,15 @@ export const styles = StyleSheet.create({
     fontSize: 16,
     color: theme.colors.darkGray,
   },
+  buttonPurple: {
+    backgroundColor: theme.colors.darkPurple,
+  },
   link: {
     color: theme.colors.lightRed,
     marginTop: 15,
     fontFamily: theme.fonts.medium,
+  },
+  linkPurple: {
+    color: theme.colors.lightPurple,
   },
 });

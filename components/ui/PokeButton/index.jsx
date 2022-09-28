@@ -4,9 +4,9 @@ import { theme } from '../../../themes/theme';
 
 import { styles } from './styles';
 
-export function PokeButton({ children }) {
+export function PokeButton({ children, style }) {
   return (
-    <View style={styles.button}>
+    <View style={[styles.button, style]}>
       <Pressable
         style={styles.buttonInner}
         android_ripple={{ color: theme.colors.lightRed }}
