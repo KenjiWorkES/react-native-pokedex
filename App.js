@@ -14,6 +14,7 @@ import { theme } from './themes/theme';
 import { LoginScreen } from './screens/LoginScreen';
 import { SignUpScreen } from './screens/SignUpScreen';
 
+import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 const Stack = createNativeStackNavigator();
@@ -44,7 +45,9 @@ export default function App() {
   return (
     <>
       <StatusBar style="dark" />
-      <StackNavigation />
+      <NavigationContainer>
+        <StackNavigation />
+      </NavigationContainer>
     </>
   );
 }
