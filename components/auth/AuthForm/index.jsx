@@ -1,11 +1,22 @@
 import React from 'react';
 import { Pressable, Text, TextInput, View } from 'react-native';
-
 import { styles } from './styles';
+
+import { useNavigation } from '@react-navigation/native';
 
 import { PokeButton } from '../../ui/PokeButton';
 
 export function AuthForm({ isSignIn }) {
+  const navigation = useNavigation();
+
+  const changeScreenHandler = () => {
+    if (isSignIn) {
+      navigation.replace('Login');
+    } else {
+      navigation.replace('SignIn');
+    }
+  };
+
   return (
     <View style={styles.form}>
       <Text style={styles.title}>{isSignIn ? 'Sign In' : 'Login'}</Text>
@@ -32,7 +43,7 @@ export function AuthForm({ isSignIn }) {
       <PokeButton style={isSignIn && styles.buttonPurple}>
         {isSignIn ? 'Sign In' : 'Login'}
       </PokeButton>
-      <Pressable>
+      <Pressable onPress={changeScreenHandler}>
         <Text style={[styles.link, isSignIn && styles.linkPurple]}>
           Dont't have account? Create a new user!
         </Text>

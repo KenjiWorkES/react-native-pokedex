@@ -9,7 +9,9 @@ export function PokeButton({ children, style }) {
     <View style={[styles.button, style]}>
       <Pressable
         style={styles.buttonInner}
-        android_ripple={{ color: theme.colors.lightRed }}
+        android_ripple={{
+          color: style ? theme.colors.lightPurple : theme.colors.lightRed,
+        }}
       >
         <Text style={styles.text}>{children}</Text>
         <Image
