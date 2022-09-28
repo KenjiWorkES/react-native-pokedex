@@ -4,12 +4,19 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  imageContainer: {
-    marginTop: 70,
-    width: '100%',
+  header: {
     alignItems: 'center',
   },
+  imageContainer: {
+    marginTop: 50,
+    alignItems: 'center',
+    marginBottom: 30,
+    width: 150,
+    height: 150,
+  },
   image: {
-    width: '50%',
+    resizeMode: 'contain',
+    width: '100%',
+    height: '100%',
   },
 });
