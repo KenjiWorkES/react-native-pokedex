@@ -13,19 +13,32 @@ import { theme } from './themes/theme';
 
 import { LoginScreen } from './screens/LoginScreen';
 import { SignUpScreen } from './screens/SignUpScreen';
+import { PokedexScreen } from './screens/PokedexScreen';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 
 const Stack = createNativeStackNavigator();
+const Drawer = createDrawerNavigator();
+
+const DrawerNavigation = () => {
+  return (
+    <Drawer.Navigator initialRouteName="Home">
+      <Drawer.Screen name="Pokedex" component={PokedexScreen} />
+    </Drawer.Navigator>
+  );
+};
 
 const StackNavigation = () => {
   return (
     <Stack.Navigator
       screenOptions={{
         headerShown: false,
+        contentStyle: { backgroundColor: theme.colors.whiteIce },
       }}
     >
+      <Stack.Screen name="Home" component={DrawerNavigation} />
       <Stack.Screen name="Login" component={LoginScreen} />
       <Stack.Screen name="SignIn" component={SignUpScreen} />
     </Stack.Navigator>
