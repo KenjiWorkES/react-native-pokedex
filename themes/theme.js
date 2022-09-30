@@ -45,8 +45,7 @@ export const theme = {
     groundType2: '#6e491f',
 
     iceType1: '#d8f0fa',
-    iceType2: '#dbf1fd',
-    iceType3: '#93d5f4',
+    iceType2: '#93d5f4',
 
     normalType1: '#75515b',
     normalType2: '#ae9397',
@@ -61,19 +60,17 @@ export const theme = {
     steelType1: '#42bd94',
     steelType2: '#5f766e',
 
-    grassType1: '#147b3d',
-    grassType2: '#27cb4f',
-    grassType3: '#48d0b0',
+    grassType1: '#48D0B0',
+    grassType2: '#6DDEBD',
 
     waterType1: '#86a8fc',
-    waterType2: '#1552e1',
-    waterType3: '#77bdfe',
+    waterType2: '#77bdfe',
 
     fireType1: '#fd4c5a',
-    fireType2: '#a92023',
-    fireType3: '#fb6c6c',
+    fireType2: '#fb6c6c',
 
-    electricType1: '#fbcd66',
+    electricType1: '#FFCE4B',
+    electricType2: '#fbcd66',
 
     psychicType1: '#a42a6c',
     psychicType2: '#f81c91',

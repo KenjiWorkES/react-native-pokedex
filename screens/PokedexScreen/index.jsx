@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { FlatList, Text, View } from 'react-native';
+import { PokedexItem } from '../../components/pokedex/PokedexItem';
 import { getAllPokemons } from '../../services/pokeApi';
 
 import { styles } from './styles';
@@ -10,7 +11,6 @@ export function PokedexScreen() {
   useEffect(() => {
     const fetchPokemons = async () => {
       const allPokemons = await getAllPokemons();
-      console.log(allPokemons);
       setPokemons(allPokemons);
     };
 
@@ -21,7 +21,9 @@ export function PokedexScreen() {
     <View style={styles.container}>
       <FlatList
         data={pokemons}
-        renderItem={(itemData) => <Text>{itemData.item.name}</Text>}
+        numColumns={2}
+        renderItem={(itemData) => <PokedexItem data={itemData.item.data} />}
+        columnWrapperStyle={{ justifyContent: 'space-between' }}
       />
     </View>
   );
