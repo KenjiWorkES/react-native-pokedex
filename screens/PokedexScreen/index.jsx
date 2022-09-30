@@ -7,15 +7,21 @@ import { styles } from './styles';
 
 export function PokedexScreen() {
   const [pokemons, setPokemons] = useState([]);
+  const [offSet, setoffSet] = useState(0);
 
   useEffect(() => {
     const fetchPokemons = async () => {
-      const allPokemons = await getAllPokemons();
+      const pokemonsData = await getAllPokemons(offSet);
+      const allPokemons = [...pokemons, ...pokemonsData];
       setPokemons(allPokemons);
     };
 
     fetchPokemons();
-  }, [setPokemons, getAllPokemons]);
+  }, [setPokemons, getAllPokemons, offSet]);
+
+  const changeEndHandler = () => {
+    setoffSet((prevState) => prevState + 20);
+  };
 
   return (
     <View style={styles.container}>
@@ -24,6 +30,7 @@ export function PokedexScreen() {
         numColumns={2}
         renderItem={(itemData) => <PokedexItem data={itemData.item.data} />}
         columnWrapperStyle={{ justifyContent: 'space-between' }}
+        onEndReached={changeEndHandler}
       />
     </View>
   );
