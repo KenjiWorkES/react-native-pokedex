@@ -24,7 +24,12 @@ const Drawer = createDrawerNavigator();
 
 const DrawerNavigation = () => {
   return (
-    <Drawer.Navigator initialRouteName="Home">
+    <Drawer.Navigator
+      initialRouteName="Home"
+      screenOptions={{
+        headerTitleStyle: { fontFamily: theme.fonts.extraBold, fontSize: 25 },
+      }}
+    >
       <Drawer.Screen name="Pokedex" component={PokedexScreen} />
     </Drawer.Navigator>
   );
